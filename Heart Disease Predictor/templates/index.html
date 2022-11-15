@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">'
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    
+    <title>{% block title %} {% endblock %} - Credit risk estimation</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav {
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        Predict Heart Disease
+    </nav>
+    <hr>
+    <div class="content">
+    <center>
+        <h1>Enter the details</h1>
+    <form action="/predict" method=post enctype=multipart/form-data>
+    <div style="width:500px; margin:auto; background-color:#eee">
+
+                <label for="age" style="font-weight:700">Age</label><br>
+                <input type=number name=age id="age">
+                <br><br>
+        
+                <p style="font-weight:700">Sex</p>
+                <input type="radio" id="male" name="sex" value="0">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="sex" value="1">
+                <label for="female">Female</label><br>
+                <br>
+
+                <label for="Cp" style="font-weight:700">Cp</label><br>
+                <input type=number name=Cp id="Cp">
+                <br><br>
+
+                <label for="trestbps" style="font-weight:700">trestbps</label><br>
+                <input type=number name=trestbps id="trestbps">
+                <br><br>
+
+                <label for="Cholestrol" style="font-weight:700">Cholestrol</label><br>
+                <input type=number name=Cholestrol id="Cholestrol">
+                <br><br>
+
+                <p style="font-weight:700">fbs</p>
+                <input type="radio" id="0" name="fbs" value="0">
+                <label for="0">0</label><br>
+                <input type="radio" id="1" name="fbs" value="1">
+                <label for="1">1</label><br>
+                <br>
+
+                <p style="font-weight:700">restecg</p>
+                <input type="radio" id="0" name="restecg" value="0">
+                <label for="0">0</label><br>
+                <input type="radio" id="1" name="restecg" value="1">
+                <label for="1">1</label><br>
+                <br>
+
+                <label for="thalach" style="font-weight:700">thalach</label><br>
+                <input type=number name=thalach id="thalach">
+                <br><br>
+
+                <p style="font-weight:700">exang</p>
+                <input type="radio" id="0" name="exang" value="0">
+                <label for="0">0</label><br>
+                <input type="radio" id="1" name="exang" value="1">
+                <label for="1">1</label><br>
+                <br>
+
+                <label for="oldpeak" style="font-weight:700">oldpeak</label><br>
+                <input type=number name=oldpeak id="oldpeak">
+                <br><br>
+
+                <label for="slope" style="font-weight:700">slope</label><br>
+                <input type=number name=slope id="slope">
+                <br><br>
+
+                <label for="ca" style="font-weight:700">ca</label><br>
+                <input type=number name=ca id="ca">
+                <br><br>
+
+                <label for="thal" style="font-weight:700">thal</label><br>
+                <input type=number name=thal id="thal">
+                <br><br>
+
+            </div>    
+    <br><br>
+    <input type=submit value=submit class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link">
+    <h2>{{ result }}</h2>
+    </form>
+    </center>
+    </div>
+</body>
+</html>
